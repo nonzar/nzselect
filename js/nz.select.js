@@ -18,7 +18,7 @@ var NZSelect = (function () {
             if (this.nextIdx != -1) {
                 this.lists[this.nowIdx].box.classList.remove("show");
                 this.nowIdx = -1;
-                this.__show(this.nextIdx);
+                this.show(this.nextIdx);
             }
         });
         //生成html结构
@@ -96,7 +96,7 @@ var NZSelect = (function () {
         }
         return -1;
     }
-    nzselect.prototype.__show = function (id) {
+    nzselect.prototype.show = function (id) {
         if (this.nextIdx == -1) {
             if (typeof(id) == "string") {
                 this.nextIdx = this.getIdx(id);
@@ -122,18 +122,6 @@ var NZSelect = (function () {
             this.nextIdx = -1;
         }
         return this;
-    }
-    nzselect.prototype.show = function (id) {
-        this.queue.push({
-            state: 0,
-            methon: "show",
-            id: id
-        });
-        if (this.queue.length && this.queue[0].state == 0) {
-            switch (this.queue[0].methon) {
-
-            }
-        }
     }
     nzselect.prototype.close = function () {
         //是否已显示列表
