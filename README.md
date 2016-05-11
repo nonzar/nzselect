@@ -11,7 +11,7 @@
 var select = new NZSelect();
 ```
 ---
-###.push(event,listener)
+###.on(event,listener)
 后绑定事件,传入事件名称及监听函数.
 
 **parameters**:
